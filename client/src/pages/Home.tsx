@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Download, Clapperboard, Workflow, Sparkles } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Home() {
   const handleDownload = () => {
@@ -113,21 +114,26 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <h3 className="text-2xl font-bold text-center mb-8">Workflow Phases</h3>
           <div className="grid md:grid-cols-2 gap-6">
-            {phases.map((phase, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <div className="flex items-start gap-3">
-                    <Badge className={`${phase.color} px-3 py-1 text-xs font-semibold shrink-0`}>
-                      Phase {index === 1 ? '1.5' : index < 1 ? '1' : index < 2 ? '2' : '3'}
-                    </Badge>
-                    <div>
-                      <CardTitle className="text-lg mb-2">{phase.title}</CardTitle>
-                      <CardDescription className="text-sm">{phase.description}</CardDescription>
-                    </div>
-                  </div>
-                </CardHeader>
-              </Card>
-            ))}
+            {phases.map((phase, index) => {
+              const phaseLinks = ['/phase1', '/phase15', '/phase2', '/phase3'];
+              return (
+                <Link key={index} href={phaseLinks[index]}>
+                  <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer hover:border-primary/50">
+                    <CardHeader>
+                      <div className="flex items-start gap-3">
+                        <Badge className={`${phase.color} px-3 py-1 text-xs font-semibold shrink-0`}>
+                          Phase {index === 1 ? '1.5' : index < 1 ? '1' : index < 2 ? '2' : '3'}
+                        </Badge>
+                        <div>
+                          <CardTitle className="text-lg mb-2">{phase.title}</CardTitle>
+                          <CardDescription className="text-sm">{phase.description}</CardDescription>
+                        </div>
+                      </div>
+                    </CardHeader>
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -1,0 +1,87 @@
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#dbeafe','primaryTextColor':'#000','primaryBorderColor':'#2563eb','lineColor':'#2563eb','secondaryColor':'#eff6ff','tertiaryColor':'#bfdbfe'}}}%%
+flowchart TD
+    Start([🎬 PHASE 1: PRE-PRODUCTION & ON-SET])
+    
+    Start --> Idea[💡 IDEA GENERATION]
+    
+    subgraph IdeaGen["Rapid-Fire Ideation Loop"]
+        direction TB
+        Trend[📊 Trend Analysis<br/>━━━━━━━━━━━━━<br/>• Research current viral formats<br/>• Analyze competitor content<br/>• Identify audience preferences<br/>• Study platform algorithms]
+        
+        Hook[🎣 Hook Brainstorming<br/>━━━━━━━━━━━━━<br/>• First 3-second attention grab<br/>• Pattern interrupt techniques<br/>• Visual or audio surprises<br/>• Compelling questions/statements]
+        
+        Value[⭐ Value Proposition<br/>━━━━━━━━━━━━━<br/>• What will viewer learn?<br/>• Entertainment value<br/>• Emotional connection<br/>• Actionable takeaways]
+    end
+    
+    Idea --> IdeaGen
+    IdeaGen --> PrePlan
+    
+    PrePlan[📋 PRE-PLANNING PHASE]
+    
+    subgraph Planning["Shoot-to-Edit Strategy"]
+        direction TB
+        Story[📝 Storyboard Creation<br/>━━━━━━━━━━━━━<br/>• Visual sequence planning<br/>• Shot-by-shot breakdown<br/>• Timing estimates<br/>• Camera angles noted]
+        
+        ShotList[📸 Shot List Development<br/>━━━━━━━━━━━━━<br/>• Maps to final timeline<br/>• Prioritized shot order<br/>• Equipment requirements<br/>• Location/lighting notes]
+        
+        Script[📄 Script/Outline<br/>━━━━━━━━━━━━━<br/>• Dialogue/narration<br/>• B-roll callouts<br/>• Transition points<br/>• Music/SFX cues]
+    end
+    
+    PrePlan --> Planning
+    Planning --> OnSet
+    
+    OnSet[🎥 ON-SET EXECUTION<br/>'Do Less in Post' Philosophy]
+    
+    subgraph Transitions["In-Camera Transitions"]
+        direction LR
+        T1[🌀 Whip Pans<br/>Fast horizontal camera movement]
+        T2[💨 Swipe Transitions<br/>Object passes in front of lens]
+        T3[🎯 Match Cuts<br/>Similar shapes/movements aligned]
+        T4[💥 Crash Zooms<br/>Rapid zoom in/out]
+    end
+    
+    subgraph BRoll["Comprehensive B-Roll Coverage"]
+        direction TB
+        B1[📷 Multiple Focal Lengths<br/>━━━━━━━━━━━━━<br/>• Wide establishing shots<br/>• Medium detail shots<br/>• Close-up textures<br/>• Macro details]
+        
+        B2[🎬 Varied Angles<br/>━━━━━━━━━━━━━<br/>• High angle birds eye<br/>• Low angle dramatic<br/>• Eye level natural<br/>• Dutch angle dynamic]
+        
+        B3[⚡ Action Coverage<br/>━━━━━━━━━━━━━<br/>• Hands-on activities<br/>• Movement sequences<br/>• Process shots<br/>• Environmental context]
+    end
+    
+    subgraph CleanPlates["Clean Plates for VFX"]
+        direction TB
+        CP1[🖼️ Empty Background Shots<br/>━━━━━━━━━━━━━<br/>• 5-10 seconds minimum<br/>• Same lighting conditions<br/>• Locked camera position<br/>• No movement in frame]
+        
+        CP2[🎨 Use Cases<br/>━━━━━━━━━━━━━<br/>• Object removal<br/>• Background replacement<br/>• Compositing work<br/>• Error correction]
+    end
+    
+    subgraph AudioCapture["High-Quality Audio Recording"]
+        direction TB
+        A1[🎙️ External Microphones<br/>━━━━━━━━━━━━━<br/>• Shotgun for dialogue<br/>• Lavalier for interviews<br/>• Boom for controlled sets<br/>• Ambient for atmosphere]
+        
+        A2[📊 Proper Technique<br/>━━━━━━━━━━━━━<br/>• 6-8 inches from source<br/>• 45-degree angle<br/>• Peak at -6dB to -3dB<br/>• Monitor with headphones]
+        
+        A3[🔇 Noise Management<br/>━━━━━━━━━━━━━<br/>• Record room tone<br/>• Minimize background noise<br/>• Use windscreens outdoors<br/>• Backup audio tracks]
+    end
+    
+    OnSet --> Transitions
+    OnSet --> BRoll
+    OnSet --> CleanPlates
+    OnSet --> AudioCapture
+    
+    Transitions --> Complete
+    BRoll --> Complete
+    CleanPlates --> Complete
+    AudioCapture --> Complete
+    
+    Complete([✅ READY FOR PHASE 1.5:<br/>Footage Ingestion])
+    
+    classDef phase1Style fill:#dbeafe,stroke:#2563eb,stroke-width:3px,color:#000
+    classDef detailStyle fill:#eff6ff,stroke:#60a5fa,stroke-width:2px,color:#000
+    classDef highlightStyle fill:#bfdbfe,stroke:#2563eb,stroke-width:2px,color:#000
+    
+    class Start,Idea,PrePlan,OnSet,Complete phase1Style
+    class IdeaGen,Planning,Transitions,BRoll,CleanPlates,AudioCapture detailStyle
+    class Trend,Hook,Value,Story,ShotList,Script,T1,T2,T3,T4,B1,B2,B3,CP1,CP2,A1,A2,A3 highlightStyle
+

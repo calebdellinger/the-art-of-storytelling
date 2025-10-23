@@ -1,0 +1,93 @@
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#ffedd5','primaryTextColor':'#000','primaryBorderColor':'#ea580c','lineColor':'#ea580c','secondaryColor':'#fed7aa','tertiaryColor':'#fdba74'}}}%%
+flowchart TD
+    Start([📦 PHASE 1.5: FOOTAGE INGESTION & ORGANIZATION])
+    
+    Start --> Backup[💾 IMMEDIATE BACKUP PROTOCOL]
+    
+    subgraph BackupStrategy["Dual-Drive Backup System"]
+        direction TB
+        Primary[🚀 Primary SSD<br/>━━━━━━━━━━━━━<br/>• Fast read/write speeds<br/>• Active editing workspace<br/>• Quick file access<br/>• 1-2TB recommended]
+        
+        Archive[🗄️ Archival HDD<br/>━━━━━━━━━━━━━<br/>• Long-term storage<br/>• Project backup<br/>• Cost-effective capacity<br/>• 4TB+ recommended]
+        
+        Cloud[☁️ Optional Cloud Backup<br/>━━━━━━━━━━━━━<br/>• Off-site redundancy<br/>• Disaster recovery<br/>• Collaboration access<br/>• Frame.io, Dropbox, etc.]
+    end
+    
+    Backup --> BackupStrategy
+    BackupStrategy --> Review
+    
+    Review[👁️ INITIAL REVIEW & TAGGING]
+    
+    subgraph ReviewProcess["Quick Pass-Through Workflow"]
+        direction TB
+        Flag[🚩 Flag Clips<br/>━━━━━━━━━━━━━<br/>• Selects - usable takes<br/>• Rejects - unusable<br/>• Favorites - best takes<br/>• Questionable - review later]
+        
+        Tag[🏷️ Keyword Tagging<br/>━━━━━━━━━━━━━<br/>• 'Good B-Roll'<br/>• 'Interview A/B/C'<br/>• 'Problem Shot'<br/>• 'Best Take'<br/>• 'Backup Option']
+        
+        Notes[📝 Quick Notes<br/>━━━━━━━━━━━━━<br/>• Technical issues<br/>• Performance notes<br/>• Continuity concerns<br/>• Creative ideas]
+    end
+    
+    Review --> ReviewProcess
+    ReviewProcess --> FolderStruct
+    
+    FolderStruct[📁 STANDARDIZED FOLDER STRUCTURE]
+    
+    subgraph Hierarchy["Professional File Organization"]
+        direction TB
+        
+        Root[🗂️ PROJECT_NAME/<br/>━━━━━━━━━━━━━]
+        
+        F01[📂 01_Footage/<br/>━━━━━━━━━━━━━<br/>├─ Camera_A/<br/>│  ├─ Card_01/<br/>│  └─ Card_02/<br/>├─ Camera_B/<br/>├─ Drone/<br/>└─ B-Roll/]
+        
+        F02[🎵 02_Audio/<br/>━━━━━━━━━━━━━<br/>├─ External_Mic/<br/>│  ├─ Interview/<br/>│  └─ Dialogue/<br/>├─ Music/<br/>└─ SFX/]
+        
+        F03[🎨 03_Graphics/<br/>━━━━━━━━━━━━━<br/>├─ Titles/<br/>├─ Lower_Thirds/<br/>├─ Logos/<br/>└─ Overlays/]
+        
+        F04[📤 04_Exports/<br/>━━━━━━━━━━━━━<br/>├─ Drafts/<br/>├─ Finals/<br/>└─ Platform_Specific/<br/>   ├─ YouTube/<br/>   ├─ Instagram/<br/>   └─ TikTok/]
+        
+        F05[💼 05_ProjectFiles/<br/>━━━━━━━━━━━━━<br/>├─ Resolve_Projects/<br/>│  └─ project.drp<br/>├─ Proxies/<br/>└─ Cache/]
+        
+        F06[📋 06_Documents/<br/>━━━━━━━━━━━━━<br/>├─ Scripts/<br/>├─ Storyboards/<br/>├─ Shot_Lists/<br/>└─ Production_Notes/]
+    end
+    
+    FolderStruct --> Hierarchy
+    Hierarchy --> Naming
+    
+    Naming[🔤 METADATA & NAMING CONVENTIONS]
+    
+    subgraph NamingRules["Consistent File Naming System"]
+        direction TB
+        
+        Convention[📏 Naming Convention<br/>━━━━━━━━━━━━━<br/>Format:<br/>YYYYMMDD_ProjectName_CameraID_ClipNumber<br/><br/>Example:<br/>20250123_ProductLaunch_CamA_001.mp4]
+        
+        Best[✅ Best Practices<br/>━━━━━━━━━━━━━<br/>• No spaces - use underscores<br/>• Include date stamps<br/>• Sequential numbering<br/>• Descriptive but concise<br/>• Consistent across project]
+        
+        Meta[📊 Metadata Embedding<br/>━━━━━━━━━━━━━<br/>• Scene/take information<br/>• Camera settings<br/>• Location data<br/>• Talent names<br/>• Copyright info]
+    end
+    
+    Naming --> NamingRules
+    NamingRules --> Import
+    
+    Import[📥 IMPORT TO RESOLVE]
+    
+    subgraph ImportPrep["Pre-Import Checklist"]
+        direction TB
+        
+        Check1[✓ Verify all files copied<br/>✓ Confirm backup integrity<br/>✓ Check file formats]
+        Check2[✓ Folder structure complete<br/>✓ Naming conventions applied<br/>✓ Initial tags/flags set]
+        Check3[✓ Storage space adequate<br/>✓ Proxies planned<br/>✓ Ready for Media Page]
+    end
+    
+    Import --> ImportPrep
+    ImportPrep --> Complete
+    
+    Complete([✅ READY FOR PHASE 2:<br/>DaVinci Resolve Post-Production])
+    
+    classDef phase15Style fill:#ffedd5,stroke:#ea580c,stroke-width:3px,color:#000
+    classDef detailStyle fill:#fed7aa,stroke:#f97316,stroke-width:2px,color:#000
+    classDef highlightStyle fill:#fdba74,stroke:#ea580c,stroke-width:2px,color:#000
+    
+    class Start,Backup,Review,FolderStruct,Naming,Import,Complete phase15Style
+    class BackupStrategy,ReviewProcess,Hierarchy,NamingRules,ImportPrep detailStyle
+    class Primary,Archive,Cloud,Flag,Tag,Notes,Root,F01,F02,F03,F04,F05,F06,Convention,Best,Meta,Check1,Check2,Check3 highlightStyle
+

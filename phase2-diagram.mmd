@@ -1,0 +1,108 @@
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#dcfce7','primaryTextColor':'#000','primaryBorderColor':'#16a34a','lineColor':'#16a34a','secondaryColor':'#bbf7d0','tertiaryColor':'#86efac'}}}%%
+flowchart TD
+    Start([🎨 PHASE 2: DAVINCI RESOLVE POST-PRODUCTION])
+    
+    Start --> Media[📂 MEDIA PAGE]
+    
+    subgraph MediaPage["Media Management & Proxy Generation"]
+        direction TB
+        
+        Proxy[⚡ Proxy Generation<br/>━━━━━━━━━━━━━<br/>• Use Blackmagic Proxy Generator<br/>• H.264 or ProRes Proxy codec<br/>• Half or quarter resolution<br/>• Automatic linking to originals]
+        
+        Import[📥 Import Organized Folders<br/>━━━━━━━━━━━━━<br/>• Maintain folder structure<br/>• Create bins per category<br/>• Smart bins for keywords<br/>• Color-code clip types]
+        
+        MediaMgmt[🗂️ Media Pool Organization<br/>━━━━━━━━━━━━━<br/>• Footage bins<br/>• Audio bins<br/>• Graphics bins<br/>• Music/SFX bins]
+    end
+    
+    Media --> MediaPage
+    MediaPage --> Cut
+    
+    Cut[✂️ CUT PAGE]
+    
+    subgraph CutPage["Speed-Focused Assembly"]
+        direction TB
+        
+        Quick[🚀 Quick Assembly<br/>━━━━━━━━━━━━━<br/>• Drag clips to timeline<br/>• Rough cut only<br/>• Don't worry about perfection<br/>• Focus on story flow]
+        
+        Trim[✨ Fast Trimming<br/>━━━━━━━━━━━━━<br/>• Source tape workflow<br/>• In/Out point marking<br/>• Quick append/insert<br/>• Sync clips automatically]
+        
+        Speed[⚡ Optimized for Speed<br/>━━━━━━━━━━━━━<br/>• Streamlined interface<br/>• Minimal options<br/>• Fast playback<br/>• Quick decisions]
+    end
+    
+    Cut --> CutPage
+    CutPage --> Edit
+    
+    Edit[🎬 EDIT PAGE - THE WORKHORSE]
+    
+    subgraph EditPage["Detailed Editing Workflow"]
+        direction TB
+        
+        Timeline[📊 Timeline Structure<br/>━━━━━━━━━━━━━<br/>V3: Text/Titles<br/>V2: B-Roll/Overlays<br/>V1: Main Footage<br/>━━━━━━━━━━━━━<br/>A3: SFX<br/>A2: Music<br/>A1: Dialogue/Primary Audio]
+        
+        Adjust[🎨 Adjustment Layers<br/>━━━━━━━━━━━━━<br/>• Global color corrections<br/>• Vignettes and effects<br/>• Title animations<br/>• Transition overlays<br/>• Apply to multiple clips at once]
+        
+        Shortcuts[⌨️ Essential Shortcuts<br/>━━━━━━━━━━━━━<br/>• A: Select Arrow tool<br/>• T: Trim tool<br/>• B: Blade tool<br/>• I/O: Mark In/Out<br/>• Q/W: Ripple trim<br/>• Cmd+B: Add marker]
+        
+        Templates[📐 Pre-Built Assets<br/>━━━━━━━━━━━━━<br/>• Title templates<br/>• Lower thirds<br/>• Transition presets<br/>• Effect macros<br/>• Fusion compositions]
+    end
+    
+    Edit --> EditPage
+    EditPage --> Color
+    
+    Color[🎨 COLOR PAGE]
+    
+    subgraph ColorPage["Professional Color Grading"]
+        direction TB
+        
+        NodeTree[🌳 Node Tree Hierarchy<br/>━━━━━━━━━━━━━]
+        
+        Node1[Node 1: Primary Correction<br/>━━━━━━━━━━━━━<br/>• Apply LUT for log conversion<br/>• Balance exposure<br/>• Set white balance<br/>• Normalize contrast<br/>• Foundation for all grades]
+        
+        Node2[Node 2: Secondary Adjustments<br/>━━━━━━━━━━━━━<br/>• Skin tone refinement<br/>• Sky/background tweaks<br/>• Selective color grading<br/>• HSL qualifiers<br/>• Power windows/masks]
+        
+        Node3[Node 3: Creative Grade<br/>━━━━━━━━━━━━━<br/>• Apply PowerGrade/LUT<br/>• Establish visual style<br/>• Color harmony<br/>• Mood and atmosphere<br/>• Final polish]
+        
+        ColorTools[🛠️ Essential Tools<br/>━━━━━━━━━━━━━<br/>• Lift/Gamma/Gain wheels<br/>• Curves for precision<br/>• Qualifiers for selection<br/>• Scopes for accuracy<br/>• Color warper for creative looks]
+    end
+    
+    Color --> ColorPage
+    NodeTree --> Node1
+    Node1 --> Node2
+    Node2 --> Node3
+    Node3 --> ColorTools
+    ColorTools --> Fairlight
+    
+    Fairlight[🔊 FAIRLIGHT PAGE]
+    
+    subgraph FairlightPage["Professional Audio Post-Production"]
+        direction TB
+        
+        EQComp[🎚️ Core Audio Tools<br/>━━━━━━━━━━━━━]
+        
+        EQ[Equalizer - EQ<br/>━━━━━━━━━━━━━<br/>• Remove low rumble 80Hz HPF<br/>• Boost presence 3-5kHz<br/>• Reduce harshness 6-8kHz<br/>• Clean up mud 200-400Hz]
+        
+        Comp[Compressor<br/>━━━━━━━━━━━━━<br/>• Even out volume levels<br/>• Ratio 3:1 to 4:1 for dialogue<br/>• Threshold -18dB to -12dB<br/>• Fast attack, medium release<br/>• Add punch and consistency]
+        
+        Bus[🎵 Bus Track Mixing<br/>━━━━━━━━━━━━━<br/>• Dialogue Bus → Group all dialogue<br/>• Music Bus → All music tracks<br/>• SFX Bus → All sound effects<br/>• Master Bus → Final mix output<br/>• Apply bus-level processing]
+        
+        FinalMix[🎧 Final Mix Standards<br/>━━━━━━━━━━━━━<br/>• Dialogue -12dB to -6dB<br/>• Music -18dB to -12dB<br/>• SFX -20dB to -12dB<br/>• Master peak -3dB max<br/>• Use limiters to prevent clipping]
+    end
+    
+    Fairlight --> FairlightPage
+    EQComp --> EQ
+    EQComp --> Comp
+    EQ --> Bus
+    Comp --> Bus
+    Bus --> FinalMix
+    FinalMix --> Complete
+    
+    Complete([✅ READY FOR PHASE 3:<br/>Finalization & Distribution])
+    
+    classDef phase2Style fill:#dcfce7,stroke:#16a34a,stroke-width:3px,color:#000
+    classDef detailStyle fill:#bbf7d0,stroke:#22c55e,stroke-width:2px,color:#000
+    classDef highlightStyle fill:#86efac,stroke:#16a34a,stroke-width:2px,color:#000
+    
+    class Start,Media,Cut,Edit,Color,Fairlight,Complete phase2Style
+    class MediaPage,CutPage,EditPage,ColorPage,FairlightPage detailStyle
+    class Proxy,Import,MediaMgmt,Quick,Trim,Speed,Timeline,Adjust,Shortcuts,Templates,NodeTree,Node1,Node2,Node3,ColorTools,EQComp,EQ,Comp,Bus,FinalMix highlightStyle
+
