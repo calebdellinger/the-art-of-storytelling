@@ -1,0 +1,80 @@
+flowchart TD
+    Start([Asset Management Architecture]) --> Foundation[Foundation: Connected Workspace]
+    
+    Foundation --> Stack{Core Technology Stack}
+    Stack --> Notion[Notion: Command Center<br/>Project Management & Documentation]
+    Stack --> Google[Google Workspace: Infrastructure<br/>Critical Data & Scripts]
+    Stack --> Resolve[DaVinci Resolve: Engine<br/>NLE with Proxy Workflow]
+    Stack --> Manus[manu.im: Development Director<br/>AI Agent for Ideation]
+    
+    Notion --> Central[Centralized Archive System]
+    Google --> Central
+    Resolve --> Central
+    Manus --> Central
+    
+    Central --> Storage{Storage Architecture}
+    
+    Storage --> Local[Local HDD/SSD<br/>High-Speed Primary Storage]
+    Storage --> Cloud[Google Drive<br/>2TB Cloud Backup]
+    Storage --> Future[Future NAS<br/>Deep Archive]
+    
+    Local --> FolderStruct[Folder Structure L1: Project]
+    
+    FolderStruct --> L2_1[L2: 01_RAW_FOOTAGE<br/>Original Camera Media<br/>Read-Only Access]
+    FolderStruct --> L2_2[L2: 02_PROXY_MEDIA<br/>Lower-Res Editing Files<br/>Performance Optimization]
+    FolderStruct --> L2_3[L2: 03_ASSETS<br/>Graphics, Music, SFX<br/>B-Roll Archives]
+    FolderStruct --> L2_4[L2: 04_NLE_PROJECTS<br/>DaVinci Resolve .drp Files<br/>Project Backups]
+    FolderStruct --> L2_5[L2: 05_DELIVERABLES<br/>Final Rendered Videos<br/>Export Masters]
+    FolderStruct --> L2_6[L2: ARCHIVE_VAULT<br/>Completed Projects<br/>Deep Storage]
+    
+    L2_1 --> Naming[File Naming Conventions]
+    L2_2 --> Naming
+    L2_3 --> Naming
+    L2_4 --> Naming
+    L2_5 --> Naming
+    
+    Naming --> Format[YYYYMMDD-PROJ-CAM-0001<br/>Date-Project-Camera-Sequence]
+    
+    Format --> Workflow[Production Workflow Integration]
+    
+    Workflow --> Phase1[Phase 1: Idea Generation<br/>Manus AI Research]
+    Workflow --> Phase2[Phase 2: Pre-Production<br/>Notion Planning & Scripts]
+    Workflow --> Phase3[Phase 3: Production<br/>Systematic Ingest Protocol]
+    Workflow --> Phase4[Phase 4: Post-Production<br/>Resolve Editing & Export]
+    
+    Phase1 --> NotionDB[Notion Content Calendar<br/>Idea Log Database]
+    Phase2 --> NotionProj[Notion Project Dashboard<br/>Tasks & Documentation]
+    Phase3 --> Ingest[Immediate Data Management<br/>Backup & Organization]
+    Phase4 --> Export[Final Delivery<br/>Platform-Specific Exports]
+    
+    Ingest --> Redundancy[Data Redundancy Strategy]
+    Redundancy --> Backup1[Primary: Local HDD/SSD]
+    Redundancy --> Backup2[Secondary: Google Drive]
+    Redundancy --> Backup3[Tertiary: Future NAS]
+    
+    Export --> Scale[Scaling for Teams]
+    
+    Scale --> Permissions[Permission Architecture]
+    Permissions --> ReadOnly[Raw Footage: Read-Only<br/>Prevent Accidental Deletion]
+    Permissions --> Filtered[Notion: Filtered Views<br/>Role-Based Access]
+    
+    Scale --> Delegation[Delegation Pathways]
+    Delegation --> Writer[Writer Role:<br/>Idea Generation & Scripting]
+    Delegation --> Editor[Editor Role:<br/>Post-Production Tasks]
+    Delegation --> MediaMgr[Media Manager Role:<br/>Asset Organization]
+    
+    Writer --> SOP[Standard Operating Procedure]
+    Editor --> SOP
+    MediaMgr --> SOP
+    
+    SOP --> Output([Scalable Media Enterprise<br/>Quality Consistency<br/>High Output Volume])
+    
+    style Start fill:#e1f5ff
+    style Central fill:#fff4e1
+    style Storage fill:#ffe1f5
+    style FolderStruct fill:#e1ffe1
+    style Naming fill:#f5e1ff
+    style Workflow fill:#ffe1e1
+    style Scale fill:#e1fff5
+    style Output fill:#ffd700
+
