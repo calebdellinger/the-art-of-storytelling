@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Download, Clapperboard, Workflow, Sparkles } from "lucide-react";
 import { Link } from "wouter";
+import Navigation from "@/components/Navigation";
 
 export default function Home() {
   const handleDownload = () => {
@@ -57,26 +58,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-950 dark:via-blue-950 dark:to-indigo-950">
-      {/* Header */}
-      <header className="border-b bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
-                <Clapperboard className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-foreground">Video Production Workflow</h1>
-                <p className="text-xs text-muted-foreground">High-Performance Pipeline Guide</p>
-              </div>
-            </div>
-            <Button onClick={handleDownload} className="gap-2">
-              <Download className="w-4 h-4" />
-              Download Diagram
-            </Button>
-          </div>
-        </div>
-      </header>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="container py-12 md:py-16">

@@ -9,6 +9,7 @@ import Phase1 from "./pages/Phase1";
 import Phase15 from "./pages/Phase15";
 import Phase2 from "./pages/Phase2";
 import Phase3 from "./pages/Phase3";
+import Cinematography from "./pages/Cinematography";
 
 function Router() {
   return (
@@ -18,6 +19,8 @@ function Router() {
       <Route path={"/phase15"} component={Phase15} />
       <Route path={"/phase2"} component={Phase2} />
       <Route path={"/phase3"} component={Phase3} />
+      <Route path={"/cinematography"} component={Cinematography} />
+      <Route path={"/workflow"} component={Home} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
