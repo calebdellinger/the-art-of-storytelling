@@ -27,7 +27,7 @@ export default function Navigation() {
   const isCinematographyActive = () => location.startsWith('/cinematography') || location.startsWith('/phase') || location === '/workflow';
 
   return (
-    <header className="border-b bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50">
+    <header className="glass border-b sticky top-0 z-50">
       <div className="container py-4">
         <div className="flex items-center justify-between">
           <Link href="/">
