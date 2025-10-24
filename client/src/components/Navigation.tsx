@@ -44,15 +44,14 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-2">
-            <Link href="/">
-              <Button
-                variant={isActive('/') ? "default" : "ghost"}
-                className="gap-2"
-              >
-                <Home className="w-4 h-4" />
-                Home
-              </Button>
-            </Link>
+            <Button
+              variant={isActive('/') ? "default" : "ghost"}
+              className="gap-2"
+              onClick={() => window.location.href = '/'}
+            >
+              <Home className="w-4 h-4" />
+              Home
+            </Button>
 
             {/* The Art of Cinematography Dropdown */}
             <DropdownMenu>
@@ -94,32 +93,29 @@ export default function Navigation() {
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-4 mt-6">
-                <Link href="/">
-                  <Button
-                    variant={isActive('/') ? "default" : "ghost"}
-                    className="w-full justify-start gap-2"
-                    onClick={() => setOpen(false)}
-                  >
-                    <Home className="w-4 h-4" />
-                    Home
-                  </Button>
-                </Link>
+                <Button
+                  variant={isActive('/') ? "default" : "ghost"}
+                  className="w-full justify-start gap-2"
+                  onClick={() => { setOpen(false); window.location.href = '/'; }}
+                >
+                  <Home className="w-4 h-4" />
+                  Home
+                </Button>
 
                 <div className="space-y-2">
                   <div className="px-3 py-2 text-sm font-semibold text-muted-foreground">
                     The Art of Cinematography
                   </div>
                   {cinematographyLinks.map((item) => (
-                    <Link key={item.href} href={item.href}>
-                      <Button
-                        variant={isActive(item.href) ? "default" : "ghost"}
-                        className="w-full justify-start gap-2 pl-6"
-                        onClick={() => setOpen(false)}
-                      >
-                        <item.icon className="w-4 h-4" />
-                        {item.label}
-                      </Button>
-                    </Link>
+                    <Button
+                      key={item.href}
+                      variant={isActive(item.href) ? "default" : "ghost"}
+                      className="w-full justify-start gap-2 pl-6"
+                      onClick={() => { setOpen(false); window.location.href = item.href; }}
+                    >
+                      <item.icon className="w-4 h-4" />
+                      {item.label}
+                    </Button>
                   ))}
                 </div>
               </nav>
