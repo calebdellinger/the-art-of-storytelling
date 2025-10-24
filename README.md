@@ -1,45 +1,76 @@
-# High-Performance Video Production Workflow
+# The Art of Storytelling
 
-A comprehensive, interactive guide to an efficient video production pipeline from idea generation to social media posting, featuring DaVinci Resolve best practices.
+A comprehensive visual storytelling manual designed to teach creative thinking and mastery of visual storytelling across all mediums and genres.
 
 ## Overview
 
-This website provides a detailed workflow diagram and in-depth explanations for each phase of professional video production, designed to prioritize creativity, speed, and technical excellence.
+**The Art of Storytelling** is an interactive educational platform that provides in-depth guidance on visual storytelling techniques, from technical fundamentals to creative philosophy. Whether you're creating documentaries, dramas, thrillers, or corporate content, this manual provides the foundation for exceptional visual storytelling.
 
-## Workflow Phases
+## Core Principles
 
-### Phase 1: Pre-Production & On-Set Efficiency
-- Idea generation through trend analysis and hook brainstorming
-- Pre-planning with shoot-to-edit storyboards
-- On-set execution following the "Do Less in Post" philosophy
-- In-camera transitions, comprehensive B-roll, clean plates, and high-quality audio
+### Story First
+Every technical decision serves the narrative. Learn to make choices that enhance your story rather than distract from it.
 
-### Phase 1.5: Footage Ingestion & Organization
-- Immediate dual-drive backup protocol
+### Visual Language
+Develop your unique visual vocabulary. Understand how color, composition, and movement communicate emotion and meaning.
+
+### Creative Thinking
+Break conventional patterns. Train yourself to see possibilities where others see limitations.
+
+## Learning Paths
+
+### The Art of Cinematography
+
+Master visual storytelling through camera work, composition, and technical excellence.
+
+#### Production Workflow
+- Complete video production pipeline from idea to distribution
+- "Do Less in Post" philosophy for efficient workflows
+- Professional production best practices
+
+#### Shot Types & Angles
+- Comprehensive guide to camera angles and their psychological effects
+- Shot composition and framing techniques
+- Camera movements and their storytelling purposes
+- B-roll strategies and transition techniques
+- Genre-specific cinematography approaches
+
+#### Production Phases
+
+**Phase 1: Pre-Production & On-Set**
+- Idea generation through trend analysis
+- Pre-planning with storyboards and shot lists
+- On-set execution with in-camera transitions
+- High-quality audio capture
+
+**Phase 1.5: Footage Ingestion & Organization**
+- Dual-drive backup protocol
 - Initial review and tagging workflow
 - Standardized folder structure
-- Consistent naming conventions and metadata integration
+- Metadata and naming conventions
 
-### Phase 2: DaVinci Resolve Post-Production
-- **Media Page**: Proxy generation and organized imports
-- **Cut Page**: Speed-focused assembly editing
-- **Edit Page**: Detailed timeline work with keyboard shortcuts
-- **Color Page**: Professional grading with hierarchical node structure
-- **Fairlight Page**: Audio mixing with EQ, compression, and bus tracks
+**Phase 2: DaVinci Resolve Post-Production**
+- Media page: Proxy generation
+- Cut page: Speed-focused assembly
+- Edit page: Detailed timeline work
+- Color page: Professional grading
+- Fairlight page: Audio mixing
 
-### Phase 3: Finalization & Distribution
-- Quality assurance across desktop and mobile devices
-- Platform-specific export settings (YouTube, Instagram, TikTok)
-- Strategic social media posting with hooks, SEO, and timing
-- Post-publish monitoring and community engagement
+**Phase 3: Finalization & Distribution**
+- Quality assurance across devices
+- Platform-specific export settings
+- Strategic social media posting
+- Post-publish monitoring
 
 ## Features
 
-- 📊 Interactive workflow diagrams for each phase
-- 📝 Comprehensive text explanations and best practices
-- 🎨 Phase-specific color-coded navigation
+- 📚 Comprehensive learning paths for visual storytelling
+- 🎬 Detailed cinematography techniques and best practices
+- 📊 Interactive workflow diagrams
+- 🎨 Genre-specific approaches (Documentary, Drama, Thriller, Action, Romance, Comedy)
 - 📱 Responsive design optimized for all devices
-- ⬇️ Downloadable high-resolution diagrams
+- 🔍 Organized navigation with dropdown menus
+- ⬇️ Downloadable resources and diagrams
 
 ## Technology Stack
 
@@ -48,6 +79,7 @@ This website provides a detailed workflow diagram and in-depth explanations for 
 - **UI Components**: shadcn/ui
 - **Routing**: Wouter
 - **Diagrams**: Mermaid
+- **Build Tool**: Vite
 
 ## Getting Started
 
@@ -59,10 +91,10 @@ This website provides a detailed workflow diagram and in-depth explanations for 
 
 ```bash
 # Clone the repository
-git clone https://github.com/calebdellinger/video-production-workflow.git
+git clone https://github.com/calebdellinger/the-art-of-storytelling.git
 
 # Navigate to the project directory
-cd video-production-workflow
+cd the-art-of-storytelling
 
 # Install dependencies
 pnpm install
@@ -82,18 +114,53 @@ pnpm build
 ## Project Structure
 
 ```
-video-production-workflow/
+the-art-of-storytelling/
 ├── client/
 │   ├── public/          # Static assets and diagrams
 │   ├── src/
-│   │   ├── pages/       # Page components (Home, Phase1, Phase15, Phase2, Phase3)
+│   │   ├── pages/       # Page components
+│   │   │   ├── NewHome.tsx           # Main landing page
+│   │   │   ├── Home.tsx              # Production workflow overview
+│   │   │   ├── Cinematography.tsx    # Shot types & techniques
+│   │   │   ├── Phase1.tsx            # Pre-production guide
+│   │   │   ├── Phase15.tsx           # Organization guide
+│   │   │   ├── Phase2.tsx            # Post-production guide
+│   │   │   └── Phase3.tsx            # Distribution guide
 │   │   ├── components/  # Reusable UI components
+│   │   │   └── Navigation.tsx        # Main navigation with dropdowns
 │   │   └── App.tsx      # Main application and routing
 ├── phase1-diagram.mmd   # Mermaid diagram source files
 ├── phase15-diagram.mmd
 ├── phase2-diagram.mmd
 └── phase3-diagram.mmd
 ```
+
+## Navigation Structure
+
+- **Home**: Introduction to The Art of Storytelling
+- **The Art of Cinematography** (Dropdown)
+  - Production Workflow
+  - Shot Types & Angles
+  - Phase 1: Pre-Production & On-Set
+  - Phase 1.5: Organization
+  - Phase 2: Post-Production
+  - Phase 3: Distribution
+
+## What You'll Learn
+
+### Technical Mastery
+- Camera angles and their psychological effects
+- Shot composition and framing techniques
+- Camera movements and their storytelling purposes
+- Professional production workflows
+- Post-production techniques in DaVinci Resolve
+
+### Creative Development
+- Genre-specific visual approaches
+- Transition techniques for seamless storytelling
+- B-roll strategies for visual variety
+- Color grading for emotional impact
+- Audio design and mixing fundamentals
 
 ## Contributing
 
@@ -108,7 +175,8 @@ This project is open source and available under the MIT License.
 - Workflow methodology based on professional video production best practices
 - DaVinci Resolve workflow optimizations from industry professionals
 - UI components from [shadcn/ui](https://ui.shadcn.com/)
+- Cinematography principles from established filmmaking traditions
 
 ---
 
-**Built with ❤️ for video creators and content producers**
+**Built with ❤️ for visual storytellers, filmmakers, and content creators**
