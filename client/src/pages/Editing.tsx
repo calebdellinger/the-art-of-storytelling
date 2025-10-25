@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Download, ArrowLeft, Film, Palette, Volume2, Upload, Scissors, Layers, Wand2 } from "lucide-react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
+import PostProductionTimeline from "@/components/PostProductionTimeline";
 
 export default function Editing() {
   return (
@@ -26,6 +27,18 @@ export default function Editing() {
             Master the complete post-production workflow from media ingest to final delivery. 
             Transform raw footage into compelling stories through systematic editing, color grading, and audio design.
           </p>
+        </div>
+
+        {/* Interactive Timeline */}
+        <div className="max-w-7xl mx-auto mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Interactive Post-Production Timeline</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Follow this interactive timeline to navigate through each phase of post-production. 
+              Click on any phase to see detailed tasks and mark your progress.
+            </p>
+          </div>
+          <PostProductionTimeline />
         </div>
 
         {/* Main Workflow Diagram */}
