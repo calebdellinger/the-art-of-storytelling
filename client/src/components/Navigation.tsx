@@ -29,31 +29,32 @@ export default function Navigation() {
   const isCinematographyActive = () => location.startsWith('/cinematography') || location.startsWith('/phase') || location === '/workflow' || location === '/asset-management' || location === '/editing';
 
   return (
-    <header className="glass border-b sticky top-0 z-50">
-      <div className="container py-4">
+    <header className="border-b bg-background sticky top-0 z-50 backdrop-blur-sm bg-background/95">
+      <div className="container py-6">
         <div className="flex items-center justify-between">
+          {/* Logo */}
           <Link href="/">
-            <div className="flex items-center gap-3 cursor-pointer">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-white" />
+            <div className="flex items-center gap-3 cursor-pointer group">
+              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+                <BookOpen className="w-6 h-6 text-primary-foreground" />
               </div>
-              <div>
-                <h1 className="text-xl font-bold text-foreground">The Art of Storytelling</h1>
-                <p className="text-xs text-muted-foreground">Visual Storytelling Manual</p>
-              </div>
+              <span className="text-xl font-bold group-hover:text-primary transition-colors">
+                The Art of Storytelling
+              </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-2">
-            <Button
-              variant={isActive('/') ? "default" : "ghost"}
-              className="gap-2"
-              onClick={() => window.location.href = '/'}
-            >
-              <Home className="w-4 h-4" />
-              Home
-            </Button>
+            <Link href="/">
+              <Button
+                variant={isActive('/') ? "default" : "ghost"}
+                className="gap-2"
+              >
+                <Home className="w-4 h-4" />
+                Home
+              </Button>
+            </Link>
 
             {/* The Art of Cinematography Dropdown */}
             <DropdownMenu>
@@ -67,12 +68,12 @@ export default function Navigation() {
                   <ChevronDown className="w-4 h-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuContent align="end" className="w-64">
                 {cinematographyLinks.map((item) => (
                   <Link key={item.href} href={item.href}>
-                    <DropdownMenuItem className="cursor-pointer gap-2">
+                    <DropdownMenuItem className="cursor-pointer gap-3 py-3">
                       <item.icon className="w-4 h-4" />
-                      {item.label}
+                      <span>{item.label}</span>
                     </DropdownMenuItem>
                   </Link>
                 ))}
@@ -95,29 +96,30 @@ export default function Navigation() {
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-4 mt-6">
-                <Button
-                  variant={isActive('/') ? "default" : "ghost"}
-                  className="w-full justify-start gap-2"
-                  onClick={() => { setOpen(false); window.location.href = '/'; }}
-                >
-                  <Home className="w-4 h-4" />
-                  Home
-                </Button>
+                <Link href="/">
+                  <Button
+                    variant={isActive('/') ? "default" : "ghost"}
+                    className="w-full justify-start gap-2"
+                    onClick={() => setOpen(false)}
+                  >
+                    <Home className="w-4 h-4" />
+                    Home
+                  </Button>
+                </Link>
 
                 <div className="space-y-2">
-                  <div className="px-3 py-2 text-sm font-semibold text-muted-foreground">
-                    The Art of Cinematography
-                  </div>
+                  <p className="text-sm font-semibold text-muted-foreground px-2">The Art of Cinematography</p>
                   {cinematographyLinks.map((item) => (
-                    <Button
-                      key={item.href}
-                      variant={isActive(item.href) ? "default" : "ghost"}
-                      className="w-full justify-start gap-2 pl-6"
-                      onClick={() => { setOpen(false); window.location.href = item.href; }}
-                    >
-                      <item.icon className="w-4 h-4" />
-                      {item.label}
-                    </Button>
+                    <Link key={item.href} href={item.href}>
+                      <Button
+                        variant={isActive(item.href) ? "default" : "ghost"}
+                        className="w-full justify-start gap-2"
+                        onClick={() => setOpen(false)}
+                      >
+                        <item.icon className="w-4 h-4" />
+                        {item.label}
+                      </Button>
+                    </Link>
                   ))}
                 </div>
               </nav>
