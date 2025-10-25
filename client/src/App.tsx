@@ -12,6 +12,8 @@ import Phase2 from "./pages/Phase2";
 import Phase3 from "./pages/Phase3";
 import AssetManagement from "./pages/AssetManagement";
 import Editing from "./pages/Editing";
+import ColorGrading from "./pages/ColorGrading";
+import SoundDesign from "./pages/SoundDesign";
 import Cinematography from "./pages/Cinematography";
 
 function Router() {
@@ -22,6 +24,8 @@ function Router() {
       <Route path={"/cinematography/shots"} component={Cinematography} />
       <Route path={"/asset-management"} component={AssetManagement} />
       <Route path={"/editing"} component={Editing} />
+      <Route path={"/color-grading"} component={ColorGrading} />
+      <Route path={"/sound-design"} component={SoundDesign} />
       <Route path={"/cinematography/phase1"} component={Phase1} />
       <Route path={"/cinematography/phase15"} component={Phase15} />
       <Route path={"/cinematography/phase2"} component={Phase2} />
