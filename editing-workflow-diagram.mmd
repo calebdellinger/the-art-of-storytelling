@@ -1,0 +1,127 @@
+flowchart TD
+    Start([Post-Production Workflow]) --> Ingest[Media Ingest & Organization]
+    
+    Ingest --> Backup[Immediate Backup Protocol]
+    Backup --> Primary[Primary: Local HDD/SSD]
+    Backup --> Secondary[Secondary: Cloud Storage]
+    
+    Ingest --> Resolve[DaVinci Resolve Setup]
+    
+    Resolve --> ProjectSetup{Project Configuration}
+    ProjectSetup --> Timeline[Timeline Settings<br/>Frame Rate & Resolution]
+    ProjectSetup --> ProxyGen[Proxy Generation<br/>H.264 Lower Resolution]
+    ProjectSetup --> ColorSpace[Color Space Management<br/>Rec.709 / Log]
+    
+    Timeline --> MediaPage[Media Page: Import & Organize]
+    ProxyGen --> MediaPage
+    ColorSpace --> MediaPage
+    
+    MediaPage --> Bins[Create Bins Structure]
+    Bins --> B1[Bin: A-Roll Main Footage]
+    Bins --> B2[Bin: B-Roll Supplementary]
+    Bins --> B3[Bin: Graphics & Titles]
+    Bins --> B4[Bin: Audio & Music]
+    
+    B1 --> CutPage[Cut Page: Assembly Edit]
+    B2 --> CutPage
+    B3 --> CutPage
+    B4 --> CutPage
+    
+    CutPage --> Rough[Rough Cut Assembly<br/>Story Structure]
+    Rough --> Pacing[Pacing & Rhythm<br/>Remove Dead Space]
+    
+    Pacing --> EditPage[Edit Page: Fine-Tuning]
+    
+    EditPage --> Techniques{Editing Techniques}
+    Techniques --> JCut[J-Cuts & L-Cuts<br/>Smooth Audio Transitions]
+    Techniques --> MatchCut[Match Cuts<br/>Visual Continuity]
+    Techniques --> Cutaway[Cutaways & Inserts<br/>Context & Detail]
+    Techniques --> Montage[Montage Sequences<br/>Time Compression]
+    
+    JCut --> Transitions[Transition Selection]
+    MatchCut --> Transitions
+    Cutaway --> Transitions
+    Montage --> Transitions
+    
+    Transitions --> T1[Hard Cuts: 95%<br/>Clean & Professional]
+    Transitions --> T2[Cross Dissolve: Time/Location<br/>Emotional Shifts]
+    Transitions --> T3[Creative Transitions<br/>Whip Pans, Dip to Black]
+    
+    T1 --> ColorPage[Color Page: Grading]
+    T2 --> ColorPage
+    T3 --> ColorPage
+    
+    ColorPage --> ColorWorkflow{Color Workflow}
+    ColorWorkflow --> Balance[Primary Corrections<br/>Exposure, Contrast, White Balance]
+    ColorWorkflow --> Secondary[Secondary Corrections<br/>Skin Tones, Sky, Selective]
+    ColorWorkflow --> LUT[LUT Application<br/>Creative Look]
+    ColorWorkflow --> Nodes[Node Structure<br/>Non-Destructive Workflow]
+    
+    Balance --> ColorTheory[Color Theory Application]
+    Secondary --> ColorTheory
+    LUT --> ColorTheory
+    Nodes --> ColorTheory
+    
+    ColorTheory --> Warm[Warm Tones: Happiness, Energy<br/>Orange, Yellow, Red]
+    ColorTheory --> Cool[Cool Tones: Calm, Sadness<br/>Blue, Cyan, Teal]
+    ColorTheory --> Contrast[High Contrast: Drama<br/>Low Contrast: Dreamy]
+    
+    Warm --> FairlightPage[Fairlight Page: Audio Design]
+    Cool --> FairlightPage
+    Contrast --> FairlightPage
+    
+    FairlightPage --> AudioWorkflow{Audio Workflow}
+    AudioWorkflow --> Dialogue[Dialogue Editing<br/>Cleanup & Clarity]
+    AudioWorkflow --> Music[Music Selection<br/>Emotional Foundation]
+    AudioWorkflow --> SFX[Sound Effects<br/>Immersion & Detail]
+    AudioWorkflow --> Mix[Audio Mixing<br/>Balance & Levels]
+    
+    Dialogue --> Normalize[Normalize Dialogue<br/>-18dB to -12dB]
+    Music --> MusicLevel[Music Background<br/>-24dB to -18dB]
+    SFX --> SFXLevel[SFX Accents<br/>-20dB to -15dB]
+    
+    Normalize --> AudioTech[Audio Techniques]
+    MusicLevel --> AudioTech
+    SFXLevel --> AudioTech
+    
+    AudioTech --> EQ[EQ: Frequency Balance<br/>Remove Mud & Harshness]
+    AudioTech --> Compression[Compression: Dynamic Control<br/>Consistent Levels]
+    AudioTech --> Reverb[Reverb & Delay<br/>Space & Depth]
+    AudioTech --> Limiter[Limiter: Peak Control<br/>-1dB Maximum]
+    
+    EQ --> DeliverPage[Deliver Page: Export]
+    Compression --> DeliverPage
+    Reverb --> DeliverPage
+    Limiter --> DeliverPage
+    
+    DeliverPage --> ExportSettings{Platform-Specific Export}
+    
+    ExportSettings --> YouTube[YouTube<br/>H.264, 1080p/4K<br/>20-50 Mbps]
+    ExportSettings --> Instagram[Instagram Reels<br/>H.264, 1080x1920<br/>9:16 Vertical]
+    ExportSettings --> TikTok[TikTok<br/>H.264, 1080x1920<br/>High Bitrate]
+    ExportSettings --> Master[Archive Master<br/>ProRes 422 HQ<br/>Full Quality]
+    
+    YouTube --> QC[Quality Control Review]
+    Instagram --> QC
+    TikTok --> QC
+    Master --> QC
+    
+    QC --> Checks{Final Checks}
+    Checks --> Visual[Visual: Color, Exposure<br/>No Artifacts]
+    Checks --> Audio[Audio: Levels, Sync<br/>No Clipping]
+    Checks --> Technical[Technical: Resolution<br/>Frame Rate, Codec]
+    
+    Visual --> Output([Final Deliverable<br/>Ready for Distribution])
+    Audio --> Output
+    Technical --> Output
+    
+    style Start fill:#e1f5ff
+    style Resolve fill:#fff4e1
+    style MediaPage fill:#ffe1f5
+    style CutPage fill:#e1ffe1
+    style EditPage fill:#f5e1ff
+    style ColorPage fill:#ffe1e1
+    style FairlightPage fill:#e1fff5
+    style DeliverPage fill:#fff4e1
+    style Output fill:#ffd700
+

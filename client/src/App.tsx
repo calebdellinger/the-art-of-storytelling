@@ -11,6 +11,7 @@ import Phase15 from "./pages/Phase15";
 import Phase2 from "./pages/Phase2";
 import Phase3 from "./pages/Phase3";
 import AssetManagement from "./pages/AssetManagement";
+import Editing from "./pages/Editing";
 import Cinematography from "./pages/Cinematography";
 
 function Router() {
@@ -20,6 +21,7 @@ function Router() {
       <Route path={"/cinematography/workflow"} component={Home} />
       <Route path={"/cinematography/shots"} component={Cinematography} />
       <Route path={"/asset-management"} component={AssetManagement} />
+      <Route path={"/editing"} component={Editing} />
       <Route path={"/cinematography/phase1"} component={Phase1} />
       <Route path={"/cinematography/phase15"} component={Phase15} />
       <Route path={"/cinematography/phase2"} component={Phase2} />

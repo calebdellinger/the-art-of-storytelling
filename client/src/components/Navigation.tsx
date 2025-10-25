@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu, BookOpen, Home, ChevronDown, Camera, Workflow, Film, Database } from "lucide-react";
+import { Menu, BookOpen, Home, ChevronDown, Camera, Workflow, Film, Database, Scissors } from "lucide-react";
 import { Link, useLocation } from "wouter";
 
 export default function Navigation() {
@@ -22,10 +22,11 @@ export default function Navigation() {
     { href: "/cinematography/phase2", label: "Phase 2: Post-Production", icon: Film },
     { href: "/cinematography/phase3", label: "Phase 3: Distribution", icon: Film },
     { href: "/asset-management", label: "Asset Management", icon: Database },
+    { href: "/editing", label: "The Art of Editing", icon: Scissors },
   ];
 
   const isActive = (href: string) => location === href;
-  const isCinematographyActive = () => location.startsWith('/cinematography') || location.startsWith('/phase') || location === '/workflow' || location === '/asset-management';
+  const isCinematographyActive = () => location.startsWith('/cinematography') || location.startsWith('/phase') || location === '/workflow' || location === '/asset-management' || location === '/editing';
 
   return (
     <header className="glass border-b sticky top-0 z-50">
